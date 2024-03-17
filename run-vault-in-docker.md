@@ -3,10 +3,10 @@
 1. Check if Docker is installed on your system: 
 ```docker --version```
 
-    If not installed, follow these directions:
-    For Mac: https://docs.docker.com/desktop/install/mac-install/
-    For Linux: https://docs.docker.com/desktop/install/linux-install/
-    For Windows: https://docs.docker.com/desktop/install/windows-install/
+    If not installed, follow these directions:  
+    For Mac: https://docs.docker.com/desktop/install/mac-install/  
+    For Linux: https://docs.docker.com/desktop/install/linux-install/  
+    For Windows: https://docs.docker.com/desktop/install/windows-install/  
 
 2. Check if Docker is running:
 ```systemctl status docker```
