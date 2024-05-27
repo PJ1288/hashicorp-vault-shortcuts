@@ -1,4 +1,4 @@
-# Instructions to run HashiCorp Vault in Docker.
+# Instructions to run HashiCorp Vault in Docker
 
 1. Check if Docker is installed on your system: 
 ```docker --version```

@@ -1,0 +1,25 @@
+server:
+  ha: 
+    enabled: true
+  dataStorage:
+    enabled: true
+    storageClass: "standard"
+  affinity: ""
+  priorityClassName: ""
+  auditStorage:
+    enabled: false
+  audit:
+    enabled: false
+  standalone:
+    enabled: false
+  logLevel: "info"
+  extraArgs: ""
+  haStorage:
+    enabled: true
+    config: |
+      storage "consul" {
+        address = "consul-server.default.svc.cluster.local:8500"
+      }
+
+ui:
+  enabled: true
