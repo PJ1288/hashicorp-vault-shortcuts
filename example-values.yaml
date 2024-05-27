@@ -1,25 +1,16 @@
 server:
   ha: 
     enabled: true
-  dataStorage:
-    enabled: true
-    storageClass: "standard"
-  affinity: ""
-  priorityClassName: ""
-  auditStorage:
-    enabled: false
-  audit:
-    enabled: false
-  standalone:
-    enabled: false
-  logLevel: "info"
-  extraArgs: ""
-  haStorage:
-    enabled: true
     config: |
-      storage "consul" {
-        address = "consul-server.default.svc.cluster.local:8500"
+      ui = true
+
+      listener "tcp" {
+        tls_disable = 1
+        address = "[::]:8200"
+        cluster_address = "[::]:8201"
       }
 
-ui:
-  enabled: true
+      storage "consul" {
+        path = "vault"
+        address = "consul-server:8500"
+      }
