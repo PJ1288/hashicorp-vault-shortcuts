@@ -1,0 +1,21 @@
+server:
+  ha:
+    enabled: true
+    config: |
+      ui = true
+
+      listener "tcp" {
+        address = "0.0.0.0:8200"
+        tls_disable = "true"
+      }
+
+      storage "file" {
+        path = "/vault/data"
+      }
+
+      seal "awskms" {
+        region     = "us-east-2"
+        kms_key_id = "<your-kms-key-id>"
+        access_key = "<your-access-key>"
+        secret_key = "<your-secret-key>"
+      }
