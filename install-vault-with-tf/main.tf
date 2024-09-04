@@ -7,7 +7,7 @@ provider "aws" {
 # SSH key pair
 resource "aws_key_pair" "deployer_key" {
   key_name   = "shortcut-vault-key"
-  public_key = file("/Users/pjain/shortcut_rsa.pub")
+  public_key = file("<path to public key>")
 }
 
 resource "aws_instance" "vault_server" {
