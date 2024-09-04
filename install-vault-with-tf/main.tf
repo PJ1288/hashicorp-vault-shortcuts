@@ -4,9 +4,16 @@ provider "aws" {
   region = "us-east-2"
 }
 
+# SSH key pair
+resource "aws_key_pair" "deployer_key" {
+  key_name   = "shortcut-vault-key"
+  public_key = file("/Users/pjain/shortcut_rsa.pub")
+}
+
 resource "aws_instance" "vault_server" {
   ami           = "ami-0649bea3443ede307"
   instance_type = "t2.micro"
+  key_name      = "shortcut-vault-key"
 
   tags = {
     Name = "ShortcutVaultServer"
